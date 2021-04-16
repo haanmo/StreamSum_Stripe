@@ -1,0 +1,38 @@
+…or create a new repository on the command line
+echo "# StreamSum_Stripe" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/haanmo/StreamSum_Stripe.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/haanmo/StreamSum_Stripe.git
+git branch -M main
+git push -u origin main
+
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
+###
+
+git init
+git status
+git remote -v
+git -login
+git --help
+
+
+git add .
+git status
+
+git remote add origin https://github.com/haanmo/StreamSum_Stripe.git
+git push -u origin master
+
+git add .
+git status
+git push -u origin master
+git commit -m "new files added"
+
