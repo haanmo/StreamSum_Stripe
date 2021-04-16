@@ -27,12 +27,12 @@ git --help
 
 git add .
 git status
-
 git remote add origin https://github.com/haanmo/StreamSum_Stripe.git
-git push -u origin master
+git push -u origin main
+
 
 git add .
 git status
-git push -u origin master
+git push -u origin main
 git commit -m "new files added"
 
