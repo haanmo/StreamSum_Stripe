@@ -29,3 +29,5 @@ git status
 git push -u origin main
 git commit -m "new files added"
 
+## sync with Github
+git pull
