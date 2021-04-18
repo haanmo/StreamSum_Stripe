@@ -15,9 +15,13 @@ var app = express();
 
 // 2. init middlewares
 app.use(express.json());
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 // 3. init router
-app.use('/transfer', require('./Transfer.js').transferWrapper());
+app.use('/transfer', require('./transfer.js').transferWrapper());
+app.use('/purchase', require('./purchase.js').purchaseWrapper());
+app.use('/purchaseTest', require('./purchaseTest.js').purchaseTestWrapper());
 
 // 4. start a server
 app.listen(52273, function () {

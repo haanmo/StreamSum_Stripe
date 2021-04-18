@@ -1,3 +1,4 @@
+# original messages for initialization
 …or create a new repository on the command line
 echo "# StreamSum_Stripe" >> README.md
 git init
@@ -17,20 +18,12 @@ You can initialize this repository with code from a Subversion, Mercurial, or TF
 
 
 ###
-
-git init
-git status
-git remote -v
-git -login
-git --help
-
-
 git add .
 git status
 git remote add origin https://github.com/haanmo/StreamSum_Stripe.git
 git push -u origin main
 
-
+## update code
 git add .
 git status
 git push -u origin main
