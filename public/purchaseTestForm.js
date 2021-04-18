@@ -10,12 +10,11 @@ function ready() {
 
 function purchaseClicked() {
     
-    // ok
     var priceElement = document.getElementById('test-amount')
     var price = parseFloat(priceElement.value) * 100 
     
-    stripeHandler.open({ //
-        amount: price // 
+    stripeHandler.open({ 
+        amount: price 
     })
     
 }
@@ -26,7 +25,7 @@ var stripeHandler = StripeCheckout.configure({
     token: function(token) {
         var priceElement = document.getElementById('test-amount')
         var price = parseFloat(priceElement.value) * 100
-            
+
         fetch('/purchase', {
             method: 'POST',
             headers: {
