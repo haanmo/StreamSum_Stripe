@@ -33,6 +33,7 @@
 ```
 
 #### 5. Todo
+1) sync VS async VS multi threads
 1) exception handling
 2) logging 
 3) containerlization
