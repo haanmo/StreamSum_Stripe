@@ -7,6 +7,11 @@
 
 3. descriptions:
     Implementing a page for Stripe Purchase functionality
+
+4. Todo
+    1) Exception handling
+    2) Logging
+
 */
 
 // 1. init Stripe configuration
@@ -29,21 +34,26 @@ var purchaseWrapper = function (data) {
 // 4. init post 
 function initRouters () {
     // /purchase
-    router.post('/', function (request, response) {
-        stripe.charges.create({  // 
-            source: request.body.stripeTokenId,
-            amount: request.body.amount,
-            currency: request.body.currency
-        }).then(function(){
-            console.log('Charge Successful');
-            response.json({
-                message: 'Successfully purchased items'
-            })
-        }).catch(function() {
-            console.log('Charge Fail');
-            resposne.status(500).end();
-        })
+    router.post('/', async function (request, response) {
+        const result = await createPurchase(request);
     });
+}
+
+// 5. transfer fund to a destination account.
+const createPurchase = async function (request) {
+    stripe.charges.create({  // 
+        source: request.body.stripeTokenId,
+        amount: request.body.amount,
+        currency: request.body.currency
+    }).then(function(){
+        console.log('Charge Successful');
+        response.json({
+            message: 'Successfully purchased items'
+        })
+    }).catch(function() {
+        //console.log('Charge Fail');
+        //resposne.status(500).end();
+    })
 }
 
 // 6. exports a wrapper

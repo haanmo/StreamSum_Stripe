@@ -16,7 +16,7 @@
             a json specifying a list of transactions (amount, currency, and destination)
         2) output from post:
             not specified yet.
-        3) input example. 1000 means 10 USD
+        3) input example (using Postman). 1000 means 10 USD
             {
                 "transactions" : [
                     {
@@ -36,6 +36,10 @@
                     }
                 ]
             }
+5. Todo
+    1) Exception handling
+    2) Logging
+
 */
 
 // 1. init Stripe configuration
@@ -61,17 +65,25 @@ function initRouters () {
     router.post('/', async function (request, response) {
         var transactions = request.body.transactions;
         for (var i in transactions) {
-            const result = await createTransfers(transactions[i]);
+            const result = await createTransfers(transactions[i], response);
         }
     });
 }
 
 // 5. transfer fund to a destination account.
-const createTransfers = async function (transaction) {
+const createTransfers = async function (transaction, response) {
     const result = stripe.transfers.create({
         amount: transaction.amount,
         currency: transaction.currency,
         destination: transaction.destination
+    }).then(function(){
+        console.log('Transfer Successful');
+        response.json({
+            message: 'Successfully Transfer Funds'
+        })
+    }).catch(function() {
+        //console.log('Charge Fail');
+        //resposne.status(500).end();
     }); 
 }
 

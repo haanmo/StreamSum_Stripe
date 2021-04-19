@@ -7,6 +7,13 @@
 
 3. descriptions:
     Run a Node Js server
+
+4. Todo
+    1) Exception handling
+    2) Logging
+
+5. Execution
+    node server.js
 */
 
 // 1. init node js express
