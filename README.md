@@ -10,6 +10,7 @@
         2-1) Post. http://localhost:52273/transfer <br />
         2-2) click Body, Raw, and then JSON <br />
         2-3) copy and paste below <br />
+<br />
 ```
 {
     "transactions" : [
@@ -31,6 +32,7 @@
     ]
 }
 ```
+<br />
 5. Todo <br />
-    1) exception handling
-    2) logging
+    1) exception handling <br />
+    2) logging <br />
