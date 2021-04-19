@@ -1,4 +1,4 @@
-# Stripe example
+# StreamSum Stripe
 
 #### 1. Executing a server
 1) node server.js 
