@@ -1,17 +1,17 @@
 # Stripe example
 
 #### 1. Executing a server
-node server.js 
+1) node server.js 
 -------------
 
 #### 2. Testing Purchase.
-http://127.0.0.1:52273/purchaseTest
+2) http://127.0.0.1:52273/purchaseTest
 -------------
 
 #### 3. Testing Transfer using Postman.
-2-1) Post. http://localhost:52273/transfer
-2-2) click Body, Raw, and then JSON
-2-3) copy and paste below
+1) Post. http://localhost:52273/transfer
+2) click Body, Raw, and then JSON
+3) copy and paste below
 {
     "transactions" : [
         {
