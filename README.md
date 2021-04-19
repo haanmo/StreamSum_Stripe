@@ -11,6 +11,7 @@
 2) click Body, Raw, and then JSON
 3) copy and paste below
 ```json
+{
     "transactions" : [
         {
             "amount": 1000,
