@@ -37,4 +37,5 @@
 1) exception handling
 2) logging 
 3) containerlization
-4) process diagrams 
+4) cloud and devops
+5) process diagrams 
