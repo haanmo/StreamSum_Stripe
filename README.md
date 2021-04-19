@@ -2,17 +2,15 @@
 
 #### 1. Executing a server
 1) node server.js 
--------------
 
 #### 2. Testing Purchase.
 2) http://127.0.0.1:52273/purchaseTest
--------------
 
 #### 3. Testing Transfer using Postman.
 1) Post. http://localhost:52273/transfer
 2) click Body, Raw, and then JSON
 3) copy and paste below
-4) {
+```json
     "transactions" : [
         {
             "amount": 1000,
@@ -31,11 +29,10 @@
         }
     ]
 }
--------------
+```
 
 #### 5. Todo
 1) exception handling
 2) logging 
 3) containerlization
 4) process diagrams 
--------------
