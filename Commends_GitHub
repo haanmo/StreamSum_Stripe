@@ -17,12 +17,6 @@ git push -u origin main
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 
 
-###
-git add .
-git status
-git remote add origin https://github.com/haanmo/StreamSum_Stripe.git
-git push -u origin main
-
 ## update code
 git add .
 git status

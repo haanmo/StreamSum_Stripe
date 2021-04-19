@@ -12,7 +12,7 @@
 1) Post. http://localhost:52273/transfer
 2) click Body, Raw, and then JSON
 3) copy and paste below
-{
+4) {
     "transactions" : [
         {
             "amount": 1000,
