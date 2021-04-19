@@ -1,17 +1,17 @@
-# Stripe for StreamSum
+# Stripe example
 
-1. Execution <br />
-    1) node server.js <br />
-<br />
-2. Testing. <br />
-    1) Purchase functionality. <br />
-        http://127.0.0.1:52273/purchaseTest <br />
-    2) Transfer functionality using Postman. <br />
-        2-1) Post. http://localhost:52273/transfer <br />
-        2-2) click Body, Raw, and then JSON <br />
-        2-3) copy and paste below <br />
-<br />
-```
+#### 1. Executing a server
+node server.js 
+-------------
+
+#### 2. Testing Purchase.
+http://127.0.0.1:52273/purchaseTest
+-------------
+
+#### 3. Testing Transfer using Postman.
+2-1) Post. http://localhost:52273/transfer
+2-2) click Body, Raw, and then JSON
+2-3) copy and paste below
 {
     "transactions" : [
         {
@@ -31,8 +31,11 @@
         }
     ]
 }
-```
-<br />
-5. Todo <br />
-    1) exception handling <br />
-    2) logging <br />
+-------------
+
+#### 5. Todo
+1) exception handling
+2) logging 
+3) containerlization
+4) process diagrams 
+-------------
