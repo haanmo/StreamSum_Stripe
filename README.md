@@ -32,7 +32,12 @@
 }
 ```
 
-#### 5. Todo
+#### 5. Authentication
+1) Authentication is not added yet, so testing API Keys are used here. 
+2) Anyone can purchase with "testing" credit card offered by Stripe.
+3) Anyone can transfer "testing" funds to any Stripe "testing" account.
+
+#### 6. Todo
 1) authentication
 2) event handler
 3) exception handler
