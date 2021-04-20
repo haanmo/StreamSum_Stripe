@@ -43,9 +43,10 @@
 
 #### 6. Todo
 1) authentication
-2) event handler
-3) exception handler
-4) logging 
-5) containerlization
-6) cloud and devops
-7) process diagrams 
+2) security
+3) event handler
+4) exception handler
+5) logging 
+6) containerlization
+7) cloud and devops
+8) process diagrams 
