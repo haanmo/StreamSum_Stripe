@@ -4,7 +4,11 @@
 1) node server.js 
 
 #### 2. Testing Purchase.
-2) http://127.0.0.1:52273/purchaseTest
+1) http://127.0.0.1:52273/purchaseTest
+2) testing credit card information
+    1) number: 4242 4242 4242 4242 4242, 
+    2) exp: 12/21 (any date later than now) 
+    3) cvv: 123 (any number)
 
 #### 3. Testing Transfer using Postman.
 1) Post. http://localhost:52273/transfer
