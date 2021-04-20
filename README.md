@@ -5,8 +5,8 @@
 
 #### 2. Testing Purchase.
 1) http://localhost/purchaseTest
-2) testing credit card information
-    1) number: 4242 4242 4242 4242 4242, 
+2) the information of testing credit card
+    1) card number: 4242 4242 4242 4242 4242, 
     2) exp: 12/21 (any date later than now) 
     3) cvv: 123 (any number)
 
