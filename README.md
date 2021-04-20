@@ -4,7 +4,7 @@
 1) node server.js 
 
 #### 2. Testing Purchase.
-1) http://127.0.0.1:52273/purchaseTest
+1) http://localhost/purchaseTest
 2) testing credit card information
     1) number: 4242 4242 4242 4242 4242, 
     2) exp: 12/21 (any date later than now) 
