@@ -33,9 +33,10 @@
 ```
 
 #### 5. Todo
-1) sync VS async VS multi threads
-1) exception handling
-2) logging 
-3) containerlization
-4) cloud and devops
-5) process diagrams 
+1) authentication
+2) event handler
+3) exception handler
+4) logging 
+5) containerlization
+6) cloud and devops
+7) process diagrams 
