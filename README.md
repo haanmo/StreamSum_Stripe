@@ -69,18 +69,19 @@
 #### 7. Execution step 3 - Testing Transfer using curl.
 1) testing transfer without an authorization using curl.
 ```
-        curl --header "Content-Type: application/json" \
-        --request POST \
-        --data '{"transactions" : [{"amount": 1000, "currency": "usd", "destination": "acct_1Ig9pFDF9rpSOoTJ"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgiZcRYUvZIwhF1"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgisLRl8zXKW68x"}]}' \
+curl --header "Content-Type: application/json" \
+--request POST \
+--data '{"transactions" : [{"amount": 1000, "currency": "usd", "destination": "acct_1Ig9pFDF9rpSOoTJ"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgiZcRYUvZIwhF1"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgisLRl8zXKW68x"}]}' \
         http://127.0.0.1:52273/transfer
 ```
-2) testing transfer with an authorization using curl
-        curl -H "Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib2R5Ijoic3R1ZmYiLCJpYXQiOjE2MjA5NzA2MzJ9.qcb7YG2v8gFD4hWFIuBgDXLaQaUKk-suGQaig2jUHdk" \
-        --header "Content-Type: application/json" \
-        --request POST \
-        --data '{"transactions" : [{"amount": 1000, "currency": "usd", "destination": "acct_1Ig9pFDF9rpSOoTJ"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgiZcRYUvZIwhF1"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgisLRl8zXKW68x"}]}' \
-        http://127.0.0.1:52273/transfer
-
+2) testing transfer with an authorization using curl.
+```
+curl -H "Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib2R5Ijoic3R1ZmYiLCJpYXQiOjE2MjA5NzA2MzJ9.qcb7YG2v8gFD4hWFIuBgDXLaQaUKk-suGQaig2jUHdk" \
+--header "Content-Type: application/json" \
+--request POST \
+--data '{"transactions" : [{"amount": 1000, "currency": "usd", "destination": "acct_1Ig9pFDF9rpSOoTJ"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgiZcRYUvZIwhF1"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgisLRl8zXKW68x"}]}' \
+http://127.0.0.1:52273/transfer
+```
 
 #### 8. Future Work
 1) The purchase API does not have any authorization. 
