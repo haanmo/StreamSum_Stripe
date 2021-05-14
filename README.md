@@ -10,6 +10,8 @@
 
 2) 127.0.0.1/transfer 
     1) Transfer funds from aStripe account to other Connected Stripe accounts.
+    2) Assumption: Admin token will be given in the header. 
+    3) A temporal admin key is stored in the private.pem file.
 
 #### 3. Temporal APIs for testing purposes
 1) 127.0.0.1/purchaseTest
