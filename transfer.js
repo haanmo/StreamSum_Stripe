@@ -53,10 +53,12 @@
         http://127.0.0.1:52273/transfer
 
 
-5. Todo
+6. Todo
     1) Exception handling
     2) Logging
 
+7. Reference
+    1) JWT tutorial: https://www.youtube.com/watch?v=0g0Of8jlhN8
 */
 
 // 1. init Stripe configuration
