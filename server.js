@@ -1,6 +1,7 @@
 /*
 1. date: 
     04.16.21
+    05.14.21
 
 2. developer:
     Haan Mo Johng (haan@digitaltwinlabs.com)
@@ -19,6 +20,7 @@
 // 1. init node js express
 const express = require('express');
 const app = express();
+const port = 52273;
 
 // 2. init middlewares
 app.use(express.json());
@@ -32,6 +34,6 @@ app.use('/purchaseTest', require('./purchaseTest.js').purchaseTestWrapper()); //
 app.use('/getAdminToken', require('./getAdminToken.js').getAdminTokenWrapper()); // testing purpose
 
 // 4. start a server
-app.listen(52273, function () {
-  console.log('Server running at http://127.0.0.1:52273');
+app.listen(port, function () {
+  console.log('Server running at http://127.0.0.1:%s', port);
 });

@@ -1,5 +1,23 @@
 # StreamSum Stripe
 
+#### 1. Project Description
+1) Providing APIs for financial transactions. 
+1) REST APIs using Node JS and Stripe.
+
+#### 2. Service APIs
+1) 127.0.0.1/purchase
+    1) make a payment 
+
+2) 127.0.0.1/transfer
+    1) transfer funds from aStripe account to other Connected Stripe accounts.
+
+#### 3. Temporal APIs for testing purposes
+1) 127.0.0.1/purchaseTest
+
+
+2) 127.0.0.1/getAdminToken
+
+
 #### 1. Executing a server
 1) node server.js 
 
@@ -36,17 +54,6 @@
 }
 ```
 
-#### 5. Authentication
-1) Authentication is not added yet, so testing API Keys are used here. 
-2) Anyone can purchase with "testing" credit card offered by Stripe.
-3) Anyone can transfer "testing" funds to any Stripe "testing" account.
-
 #### 6. Todo
-1) authentication
-2) security
-3) event handler, event-driven architecture
-4) exception handler
-5) logging 
-6) containerlization
-7) cloud and devops
-8) process diagrams 
+1) exception handler
+2) logging 
