@@ -17,8 +17,8 @@
 */
 
 // 1. init node js express
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 // 2. init middlewares
 app.use(express.json());
@@ -28,7 +28,8 @@ app.use(express.static('public'));
 // 3. init router
 app.use('/transfer', require('./transfer.js').transferWrapper());
 app.use('/purchase', require('./purchase.js').purchaseWrapper());
-app.use('/purchaseTest', require('./purchaseTest.js').purchaseTestWrapper());
+app.use('/purchaseTest', require('./purchaseTest.js').purchaseTestWrapper()); // testing purpose
+app.use('/getAdminToken', require('./getAdminToken.js').getAdminTokenWrapper()); // testing purpose
 
 // 4. start a server
 app.listen(52273, function () {

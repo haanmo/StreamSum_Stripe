@@ -51,8 +51,8 @@ const createPurchase = async function (request) {
             message: 'Successfully purchased items'
         })
     }).catch(function() {
-        //console.log('Charge Fail');
-        //resposne.status(500).end();
+        console.log('Purchase Fail');
+        resposne.status(500).end();
     })
 }
 

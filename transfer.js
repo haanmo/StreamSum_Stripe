@@ -1,6 +1,7 @@
 /*
 1. date: 
     04.16.21
+    05.14.21
 
 2. developer:
     Haan Mo Johng (haan@digitaltwinlabs.com)
@@ -10,7 +11,7 @@
         1) Get payments from campaign managers
         2) Send funds to Streamers (Stripe Trasfer)
 
-4. REST API descriptions
+4. REST API descriptions:
     1) Post. /tranfer
         1) input to post:  
             a json specifying a list of transactions (amount, currency, and destination)
@@ -36,6 +37,22 @@
                     }
                 ]
             }
+
+5. Authorization:
+    1) testing transfer without an authorization using curl
+        curl --header "Content-Type: application/json" \
+        --request POST \
+        --data '{"transactions" : [{"amount": 1000, "currency": "usd", "destination": "acct_1Ig9pFDF9rpSOoTJ"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgiZcRYUvZIwhF1"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgisLRl8zXKW68x"}]}' \
+        http://127.0.0.1:52273/transfer
+
+    2) testing transfer with an authorization using curl
+        curl -H "Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJib2R5Ijoic3R1ZmYiLCJpYXQiOjE2MjA5NzA2MzJ9.qcb7YG2v8gFD4hWFIuBgDXLaQaUKk-suGQaig2jUHdk" \
+        --header "Content-Type: application/json" \
+        --request POST \
+        --data '{"transactions" : [{"amount": 1000, "currency": "usd", "destination": "acct_1Ig9pFDF9rpSOoTJ"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgiZcRYUvZIwhF1"}, {"amount": 1000, "currency": "usd", "destination": "acct_1IgisLRl8zXKW68x"}]}' \
+        http://127.0.0.1:52273/transfer
+
+
 5. Todo
     1) Exception handling
     2) Logging
@@ -50,8 +67,10 @@ const stripe = require('stripe')(stripeSecretKey);
 const { response } = require('express');
 
 // 2. init middlewares
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const fs = require('fs');
+const jwt = require('jsonwebtoken');
 
 // 3. init a router wrapper.
 var transferWrapper = function (data) {
@@ -62,7 +81,7 @@ var transferWrapper = function (data) {
 // 4. init post 
 function initRouters () {
     // /transfer
-    router.post('/', async function (request, response) {
+    router.post('/', isAuthorized, async function (request, response) {
         var transactions = request.body.transactions;
         for (var i in transactions) {
             const result = await createTransfers(transactions[i], response);
@@ -70,7 +89,22 @@ function initRouters () {
     });
 }
 
-// 5. transfer fund to a destination account.
+// 5. define an authorization
+function isAuthorized(request, response, next) {
+    if (typeof request.headers.authorization !== "undefined") {
+        let token = request.headers.authorization.split(" ")[1];
+        let privateKey = fs.readFileSync('./private.pem', 'utf8');
+        jwt.verify(token, privateKey, {algorithm: "HS256"}, (error, decoded) => {
+            if(error) response.status(500).json({error: "Not Authorized"});
+            console.log(decoded);
+            return next();
+        });
+    } else {
+        response.status(500).json({error: "Not Authorized"});
+    }
+}
+
+// 6. transfer fund to a destination account.
 const createTransfers = async function (transaction, response) {
     const result = stripe.transfers.create({
         amount: transaction.amount,
@@ -82,8 +116,8 @@ const createTransfers = async function (transaction, response) {
             message: 'Successfully Transfer Funds'
         })
     }).catch(function() {
-        //console.log('Charge Fail');
-        //resposne.status(500).end();
+        console.log('Charge Fail');
+        resposne.status(500).end();
     }); 
 }
 

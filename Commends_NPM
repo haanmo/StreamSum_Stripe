@@ -2,3 +2,4 @@ npm init
 npm install dotenv --save-dev
 npm install stripe --save
 npm install body-parser
+npm install jsonwebtoken
