@@ -5,11 +5,8 @@
 1) REST APIs using Node JS and Stripe.
 
 #### 2. Service APIs
-1) 127.0.0.1/purchase
-    1) make a payment 
-
-2) 127.0.0.1/transfer
-    1) transfer funds from aStripe account to other Connected Stripe accounts.
+1) 127.0.0.1/purchase: make a payment using Stripe
+2) 127.0.0.1/transfer: transfer funds from aStripe account to other Connected Stripe accounts.
 
 #### 3. Temporal APIs for testing purposes
 1) 127.0.0.1/purchaseTest
