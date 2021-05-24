@@ -90,7 +90,7 @@ http://127.0.0.1:52273/transfer
 2) Exception handlers and logging are necessary.
 
 #### 9. Purchase API. 
-1) Front-End UI Code for Stripe (Eric)
+1) Front-End UI Code for Stripe (Tsen, Eric)
     1) views/purchaseTestForm.ejs
     2) line: 8 - 12
     3) line: 21
@@ -106,7 +106,7 @@ http://127.0.0.1:52273/transfer
     3) purchaseTest.js
 
 #### 10. Transfer API.
-1) Front-End UI for Stripe. JSON Input. (Eric)
+1) Front-End UI for Stripe. JSON Input. (Tsen, Eric)
     1) amount, currency, destination
 
 2) Back-End Code for Stripe (Anthony)
