@@ -88,3 +88,30 @@ http://127.0.0.1:52273/transfer
 #### 8. Future Work
 1) The purchase API does not have any authorization. 
 2) Exception handlers and logging are necessary.
+
+#### 9. Purchase API. 
+1) Front-End UI Code for Stripe (Eric)
+    1) views/purchaseTestForm.ejs
+    2) line: 8 - 12
+    3) line: 21
+
+    4) public/purchaseTestForm.js
+    5) line 8
+    6) line 11 - 20
+    7) line 22 - 48
+
+2) Back-End Code for Stripe (Anthony)
+    1) server.js
+    2) purchase.js
+    3) purchaseTest.js
+
+#### 10. Transfer API.
+1) Front-End UI for Stripe. JSON Input. (Eric)
+    1) amount, currency, destination
+
+2) Back-End Code for Stripe (Anthony)
+    1) back-end code
+    2) server.js
+    3) transfer.js
+    4) getAdminToken.js
+    5) private.pem
